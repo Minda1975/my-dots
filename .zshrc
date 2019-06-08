@@ -7,6 +7,8 @@ export TERMINAL="st"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="lf"
+# ~/ Clean-up:
+export INPUTRC="$HOME/.config/inputrc"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/mindaugas/.oh-my-zsh"
