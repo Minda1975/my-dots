@@ -1,0 +1,71 @@
+# The Simple X Hotkey Daemon is the program used to map most of the
+# dwm-independent commands.  This file is pretty readable, so I'll let you read
+# it.
+
+# The keys NOT bound here by sxhkd, but by dwm or i3 are:
+# The t thru p keys on the top row
+# The f thru ; keys on the home row
+# The b key on the bottom row
+
+# Basic binds
+super + shift + t
+	$TERMINAL
+super + shift + z
+	dmenu_run
+super + r
+	$TERMINAL -e $FILE
+super + n
+	$TERMINAL -e ncmpcpp
+super + s
+	$TERMINAL -e glances
+super + shift + w
+	$BROWSER
+super + shift + g
+	gimp
+
+# Et cetera...
+super + grave
+	dmenuunicode
+super + Insert
+	showclip
+super + shift + x
+	prompt "Shutdown computer?" "systemctl poweroff -i"
+super + shift + BackSpace
+	prompt "Reboot computer?" "systemctl reboot"
+super + shift + Escape
+	prompt 'Leave Xorg?' 'killall Xorg'
+
+# Recording
+# Take screenshot
+Print
+	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
+# Pick screenshot type
+shift + Print
+	maimpick
+
+# Pause audio
+super + {_,shift +} p
+	mpc {toggle,pause}
+# Changes to next/previous tracks
+super + {comma,period}
+	mpc {prev,next}
+# Restart track
+super + shift + less
+	mpc seek 0%
+# Seek foward in song
+super + {_,shift +} bracketright
+	mpc seek +{10,120}
+# Seek backward in song
+super + {_,shift +} bracketleft
+	mpc seek -{10,120}
+# Increase volume
+super + {equal,plus}
+	amixer sset Master {5,15}%+; refbar
+# Decrease volume
+super {_,shift +} + minus
+	amixer sset Master {5,15}%-; refbar
+super + shift + m
+	amixer sset Master toggle; refbar
+
+# super + F2 is mapped to restart dwm.
+

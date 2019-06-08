@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Load resources
+
+xrdb -merge .Xresources
+
+# This loop will run the `refbar` script to refresh the statusbar whenever a
+# command changes the music player's status.
+while pgrep -x mpd; do
+	mpc idle >/dev/null 2>&1
+	refbar
+done &
+
+notify-send "Welcome to LARBS on Void with dwm" # LARBSWELCOME
+
+setxkbmap -layout "us,lt,ru" -option "grp:alt_shift_toggle"
+xautolock -time 10 -locker 'slock' &
+wal --vte -R &
+dwmbar &
+sxhkd &
+
+
+exec dwm
