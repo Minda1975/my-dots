@@ -44,7 +44,7 @@ shift + Print
 	maimpick
 
 # Pause audio
-super + {_,shift +} p
+super + {_,shift +} y
 	mpc {toggle,pause}
 # Changes to next/previous tracks
 super + {comma,period}
