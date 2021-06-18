@@ -1,0 +1,13 @@
+!Urxvt
+
+URxvt.background: #000000
+URxvt.foreground: #ffffff
+URxvt.font: -misc-fixed-medium-*-semicondensed-*-12-*-*-*-*-*-iso8859-*
+
+!Xterm
+XTerm*faceName: Fixed
+XTerm*faceSize: 11
+
+!UXTerm
+UXTerm*faceName: Fixed
+UXTerm*faceSize: 10
